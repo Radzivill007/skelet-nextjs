@@ -1,0 +1,41 @@
+// COLORS
+$primary: #ffc700;
+$secondary: #ffc700;
+
+$white: #fff;
+$gray-100: #dfd1c6;
+$gray-300: #ebe9e8;
+$gray-600: #bdbdbd;
+$gray-900: #212529;
+$black: #000;
+
+
+
+@mixin xs {
+  @media (max-width: 413px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: 959px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
