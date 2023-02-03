@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Navbar from './Navbar'
 import Footer from './Footer.jsx'
 
-const Layout = ({ children, title }) => (
+const Layout = ({ children, title, desc }) => (
   <>
     <Head>
-      <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap'  />
       <title>{title}</title>
+      <meta name='description' content={desc} data-react-helmet='true' />
+      <link rel='shortcut icon' href='/' />
     </Head>
     <Navbar />
     {children}

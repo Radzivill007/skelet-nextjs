@@ -1,6 +1,10 @@
 import React from 'react'
 import '../styles/globals.scss'
 
+import { Montserrat } from '@next/font/google'
+
+const montserrat = Montserrat({ preload: false, fallback: ['sans-serif'], weight: ['400', '500', '700'] })
+
 const MyApp = ({ Component, pageProps }) => {
   const [innerWidth, setInnerWidth] = React.useState(0)
   React.useEffect(() => {
@@ -12,9 +16,14 @@ const MyApp = ({ Component, pageProps }) => {
   }, [])
 
   return (
-    <main>
-      <Component innerWidth={innerWidth} {...pageProps} />
-    </main>
+    <>
+      <style jsx global>{`
+        * {
+          font-family: ${montserrat.style.fontFamily};
+        }
+      `}</style>
+      <Component {...pageProps} />
+    </>
   )
 }
 
