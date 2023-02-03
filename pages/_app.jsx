@@ -5,6 +5,10 @@ import { Montserrat } from '@next/font/google'
 
 const montserrat = Montserrat({ preload: false, fallback: ['sans-serif'], weight: ['400', '500', '700'] })
 
+
+export const Context = React.createContext({})
+
+
 const MyApp = ({ Component, pageProps }) => {
   const [innerWidth, setInnerWidth] = React.useState(0)
   React.useEffect(() => {
@@ -15,15 +19,17 @@ const MyApp = ({ Component, pageProps }) => {
     return () => window.removeEventListener('resize', resize)
   }, [])
 
+
+
   return (
-    <>
+    <Context.Provider value={innerWidth={innerWidth}}>
       <style jsx global>{`
         * {
           font-family: ${montserrat.style.fontFamily};
         }
       `}</style>
       <Component {...pageProps} />
-    </>
+    </Context.Provider>
   )
 }
 
