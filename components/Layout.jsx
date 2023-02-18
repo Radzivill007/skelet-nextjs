@@ -9,9 +9,10 @@ const Layout = ({ children, title, desc }) => (
       <meta name='description' content={desc} data-react-helmet='true' />
       <link rel='shortcut icon' href='/' />
     </Head>
-    <Navbar />
-    {children}
-    <Footer />
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '100vh' }}>
+      <main>{children}</main>
+      <Footer />
+    </div>
   </>
 )
 

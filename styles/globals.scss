@@ -1,3 +1,6 @@
+@import './vars.scss';
+@import './slick.scss';
+
 * {
   padding: 0;
   margin: 0;
@@ -11,4 +14,26 @@ button {
   cursor: pointer;
   background-color: transparent;
   border: 0;
+}
+
+.container {
+  max-width: 1110px;
+  margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0.1px;
+  &-track {
+    background: transparent;
+    margin-bottom: 0.6rem;
+  }
+  &-thumb {
+    background: $primary;
+    border-radius: 10px;
+  }
+}
+
+.d-none {
+  display: none !important;
 }

@@ -1,0 +1,124 @@
+@charset 'UTF-8';
+/* Slider */
+.slick-slider {
+  position: relative;
+  & .slick-list {
+    overflow: hidden;
+  }
+  & .slick-track {
+    display: flex;
+  }
+  & .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    font-size: 0px;
+    border: 1px solid black;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 17px;
+      width: 10px;
+      height: 10px;
+      border-top: 1px solid black;
+      border-left: 1px solid black;
+      transform: rotate(-45deg);
+    }
+    &.slick-next {
+      left: unset;
+      right: -60px;
+      &::before {
+        transform: rotate(135deg);
+        left: 13px;
+      }
+    }
+  }
+  & .slick-dots {
+    position: absolute;
+    bottom: 90px;
+    left: 52px;
+    width: 100%;
+    display: flex !important;
+    flex-wrap: nowrap;
+    & li {
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin: 0 11px;
+      background-color: transparent;
+      border: 2px solid #dfdfdf;
+      border-radius: 50%;
+      &.slick-active {
+        background-color: #dfdfdf;
+      }
+      & button {
+        font-size: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  & .inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    padding: 130px 62px 198px 52px;
+    
+    & .title {
+      font-size: 58px;
+      font-weight: 500;
+      line-height: 79px;
+      letter-spacing: 0em;
+      margin-bottom: 25px;
+      max-width: 615px;
+    }
+    & .desc {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 33px;
+      letter-spacing: 0em;
+      margin-bottom: 60px;
+      max-width: 560px;
+    }
+    & .btnsWrapper {
+      display: flex;
+      gap: 30px;
+      & a {
+        color: $primary;
+        width: 185px;
+        height: 51px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        border-radius: 8px;
+        &.big {
+          width: 239px;
+          height: 62px;
+        }
+      }
+    }
+    & img {
+      position: absolute;
+      right: 100px;
+      top: 120px;
+    }
+  }
+}
